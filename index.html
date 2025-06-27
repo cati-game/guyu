@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>guyu balu wiki</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      background-color: #f0f2f5;
+    }
+
+    header {
+      background-color: #343a40;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .site-name {
+      font-size: 1.6em;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .category {
+      margin-bottom: 40px;
+    }
+
+    .category-title {
+      font-size: 1.8em;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    .page-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .page-list li {
+      margin: 8px 0;
+    }
+
+    .page-list a {
+      text-decoration: none;
+      color: #007bff;
+      font-size: 1.1em;
+    }
+
+    .page-list a:hover {
+      text-decoration: underline;
+    }
+    
+    .search-form {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-form input[type="text"] {
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: none;
+      font-size: 1em;
+    }
+
+    .search-form button {
+      padding: 6px 10px;
+      margin-left: 5px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .search-form button:hover {
+      background-color: #0056b3;
+    }
+    .version-indicator {
+      position: fixed;
+      bottom: 10px;
+      right: 15px;
+      background-color: #343a40;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      opacity: 0.8;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header>
+    <img src="images/guyu_balu.png" alt="Logo" class="logo">
+    <div class="site-name">guyu balu wiki</div>
+    <form class="search-form" action="search.html" method="GET">
+      <input type="text" name="query" id="searchInput" placeholder="Search pages..." />
+    </form>
+  </header>
+
+  <div class="container">
+
+    <div class="category">
+      <div class="category-title">The Guys</div>
+      <ul class="page-list">
+          <li><a href="pages/guyu_balu.html">Guyu Balu</a></li>
+          <li><a href="pages/suyu_salu.html">Suyu Salu</a></li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <div class="category-title">Clans</div>
+      <ul class="page-list">
+        <li><a href="pages/Martropolis.html">Martropolis</a></li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <div class="category-title">Events</div>
+      <ul class="page-list">
+          <li><a href="pages/suyu_lunatic_1.html">Suyu Lunatic First Edition</a></li>
+      </ul>
+    </div>
+    <div class="version-indicator">v1.0</div>
+  </div>
+<script>
+  function searchPages() {
+    const query = document.getElementById("searchInput").value.toLowerCase();
+    const resultsDiv = document.getElementById("searchResults");
+    resultsDiv.innerHTML = "";
+
+    if (query.length === 0) return;
+
+    const matches = wikiPages.filter(page =>
+      page.title.toLowerCase().includes(query)
+    );
+
+    if (matches.length === 0) {
+      resultsDiv.innerHTML = "<div>No results found.</div>";
+    } else {
+      matches.forEach(match => {
+        const link = document.createElement("a");
+        link.href = match.url;
+        link.textContent = match.title;
+        resultsDiv.appendChild(link);
+      });
+    }
+  }
+</script>
+</body>
+</html>

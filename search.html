@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results - guyu balu wiki</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Optional: reuse styles -->
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      background-color: #343a40;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .logo {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+    }
+
+    .site-name {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .main-container {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .title {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .result-item {
+      background-color: #fff;
+      padding: 15px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .result-item a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .result-item a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo-link" href="index.html">
+      <img class="logo" src="images/guyu_balu.png" alt="Wiki Logo">
+      <div class="site-name">guyu balu wiki</div>
+    </a>
+  </header>
+
+  <div class="main-container">
+    <div class="title">Search Results</div>
+    <div id="resultsContainer">Loading...</div>
+  </div>
+
+  <script src="pages-index.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("query")?.toLowerCase() || "";
+    const resultsContainer = document.getElementById("resultsContainer");
+
+    if (!query) {
+      resultsContainer.innerHTML = "<p>No search query provided.</p>";
+    } else {
+      const matches = wikiPages.filter(p => p.title.toLowerCase().includes(query));
+
+      if (matches.length === 0) {
+        resultsContainer.innerHTML = `<p>No results found for "<strong>${query}</strong>".</p>`;
+      } else {
+        resultsContainer.innerHTML = "";
+        matches.forEach(p => {
+          const div = document.createElement("div");
+          div.className = "result-item";
+          div.innerHTML = `<a href="${p.url}">${p.title}</a>`;
+          resultsContainer.appendChild(div);
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>
