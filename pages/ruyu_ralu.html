@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>guyu balu wiki</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      background-color: #343a40;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .logo {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+    }
+
+    .site-name {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .content-wrapper {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #e9ecef;
+      padding: 20px;
+      border-right: 1px solid #ccc;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+    }
+
+    .sidebar h3 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #007bff;
+      text-decoration: none;
+      margin: 6px 0;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .main-container {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .main-content {
+      flex: 3;
+    }
+
+    .title {
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .main-image {
+      width: 100%;
+      max-width: 700px;
+      margin: 20px 0;
+    }
+
+    .blue-link {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+
+    .blue-link:hover {
+      text-decoration: underline;
+    }
+
+    .subheader {
+      font-size: 1.5em;
+      margin-top: 30px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .infobox {
+      flex: 1;
+      background-color: #e9ecef;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .infobox h2 {
+      font-size: 1.2em;
+      background-color: #dee2e6;
+      padding: 5px;
+      margin: -15px -15px 10px -15px;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .infobox img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .infobox-item {
+      margin-bottom: 10px;
+    }
+
+    .infobox-item strong {
+      display: inline-block;
+      width: 100px;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .info-table th,
+    .info-table td {
+      padding: 12px 16px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    .info-table th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .info-table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .search-form {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-form input[type="text"] {
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: none;
+      font-size: 1em;
+    }
+
+    .search-form button {
+      padding: 6px 10px;
+      margin-left: 5px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .search-form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header with Logo and Website Name -->
+  <header>
+    <a class="logo-link" href="../index.html">
+      <img class="logo" src="../images/guyu_balu.png" alt="Wiki Logo">
+      <div class="site-name">guyu balu wiki</div>
+    </a>
+    <form class="search-form" action="../search.html" method="GET">
+      <input type="text" name="query" id="searchInput" placeholder="Search pages..." />
+    </form>
+  </header>
+
+  <div class="content-wrapper">
+
+    <!-- Chapter Sidebar -->
+    <aside class="sidebar">
+      <h3>Chapters</h3>
+      <a href="#chapter1">Introduction</a>
+      <a href="#chapter2">Lore</a>
+      <a href="#chapter7">Fun Facts</a>
+      <a href="#chapter8">References</a>
+    </aside>
+
+    <div class="main-container">
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="title">Ruyu Ralu</div>
+        <div class="subtitle">The Guys</div>
+
+        <img class="main-image" src="main-image.jpg" alt="Main Visual">
+
+        <p>This is an example paragraph with a <a class="blue-link" href="other-page.html">blue link to another page</a>.</p>
+
+        <div id="chapter1" class="subheader">Chapter 1: Introduction</div>
+        <p>Ruyu is the sneakiest of the guys and Suyus best friend. Ruyu and Suyu usually play games together even though its rare for suyu to figure out how to install new games. Ruyu loves hiding in sneaki places and usually stays out of conflict. Ruyus rate of being manipulated is just as bad as suyus and this usually results in ouyu troling both suyu and ruyu.</p>
+
+        <div id="chapter2" class="subheader">Chapter 2: Lore</div>
+        <p></p>
+
+        <div id="chapter7" class="subheader">Chapter 3: Fun Facts</div>
+        <p>He is sneaki</p>
+        <p>Best friend of <a class="blue-link" href="suyu_salu.html">Suyu Salu</a></p>
+
+        <div id="chapter8" class="subheader">Chapter 4: References</div>
+        <p>No stated citations</p>
+      </div>
+
+      <!-- Infobox -->
+      <div class="infobox">
+        <h2>Ruyu Ralu</h2>
+        <img src="../images/ruyu_ralu.png" alt="Infobox Image">
+
+        <div class="infobox-item">
+          <strong>Name:</strong> Ruyu Ralu
+        </div>
+        <div class="infobox-item">
+          <strong>Clan:</strong> <a class="blue-link" href="uyu_clan.html">x</a></p>
+        </div>
+        <div class="infobox-item">
+          <strong>Skill Level:</strong> 20
+        </div>
+        <!-- Add more infobox-items as needed -->
+      </div>
+
+    </div>
+  </div>
+<script src="pages-index.js"></script>
+<script>
+  function searchPages() {
+    const query = document.getElementById("searchInput").value.toLowerCase();
+    const resultsDiv = document.getElementById("searchResults");
+    resultsDiv.innerHTML = "";
+
+    if (query.length === 0) return;
+
+    const matches = wikiPages.filter(page =>
+      page.title.toLowerCase().includes(query)
+    );
+
+    if (matches.length === 0) {
+      resultsDiv.innerHTML = "<div>No results found.</div>";
+    } else {
+      matches.forEach(match => {
+        const link = document.createElement("a");
+        link.href = match.url;
+        link.textContent = match.title;
+        resultsDiv.appendChild(link);
+      });
+    }
+  }
+</script>
+</body>
+</html>
